@@ -2,6 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QFile>
+#include <QTextStream>
 
 namespace Ui {
 class MainWindow;
@@ -17,6 +19,8 @@ public:
 
 private slots:
     void on_plainTextEdit_textChanged();
+
+    void on_discriptionOfProgramButton_clicked();
 
 private:
     Ui::MainWindow *ui;

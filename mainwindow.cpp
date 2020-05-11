@@ -33,3 +33,15 @@ void MainWindow::on_plainTextEdit_textChanged()
     QString str = ui->plainTextEdit->toPlainText();
     permutationOfSpecSymbols(str, "#@", "@");
 }
+
+void MainWindow::on_discriptionOfProgramButton_clicked()
+{
+    QFile* file = new QFile(":/text/descriptionOfProgram.txt");
+    if(file->open(QIODevice::ReadOnly)){
+    QTextStream stream(file);
+
+    QString str;
+    str = stream.readAll();
+    ui->plainTextEdit->setPlainText(str);
+    }
+}
